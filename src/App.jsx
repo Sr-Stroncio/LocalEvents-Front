@@ -4,6 +4,8 @@ import Layout from './layout/Layout'
 import Eventos from './pages/Eventos'
 import Asociaciones from './pages/Asociaciones'
 import Perfil from './pages/Perfil'
+import Gestion from './pages/Gestion'
+import CreacionAsociacion from './pages/CreacionAsociacion'
 
 function App() {
 
@@ -14,8 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Eventos />} />
-          <Route path="/services" element={<Asociaciones />} />
-          <Route path="/contact" element={<Perfil />} />
+          <Route path="/asociaciones" element={<Asociaciones />} />
+          <Route path="/perfil" element={<Perfil />} />
+          <Route path="/gestion" element={<Gestion />} />
+          <Route path="/creacionAsociaciones" element={<CreacionAsociacion />} />
         </Route>
       </Routes>
     </>
