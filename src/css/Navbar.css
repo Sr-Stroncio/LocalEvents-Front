@@ -1,1 +1,158 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
 
+.menu-icon {
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    display: none; /* Oculto en pantallas grandes */
+    transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+    color: #414d70;
+}
+
+@media screen and (max-width: 1000px) {
+    .menu-icon {
+        display: block; 
+    }
+}
+
+nav img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 40%;
+    margin: 0;
+    padding: 0;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #2d354e;
+    color: #ffffff;
+    outline: none;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.search-bar input::placeholder {
+    color: #b9b9b9;
+    opacity: 1;
+}
+
+.search-bar input:hover{
+    background-color: #414d70;
+}
+.search-bar input:focus {
+    background-color: #2d354e;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.create-association {
+    background-color: #2d354e;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.create-association:hover {
+    background-color: #3a4977;
+}
+
+
+.notification-icon {
+    font-size: 24px;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-right: 10px;
+}
+
+.notification-icon:hover {
+    color: #465994;
+}
+
+
+.profile {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #465994;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.profile-menu a,
+.profile-menu button {
+    padding: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: left;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.profile-menu .material-symbols-outlined {
+    font-size: 30px;
+    margin-left: 0px;
+}
+
+/* Hover en opciones del menú */
+.profile-menu a:hover,
+.profile-menu button:hover {
+    background: #3a4977;
+}
