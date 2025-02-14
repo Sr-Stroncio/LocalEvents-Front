@@ -1,19 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../css/Navbar.css';
+import '../css/NavBar.css';
 import { useEstetico } from '../providers/ProviderEstetico';
 
 export function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [notificationsOpen, setNotificationsOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
+    const [showExtraOptions, setShowExtraOptions] = useState(false);
     const menuRef = useRef(null);
     const notificationsRef = useRef(null);
     const { AsideOpen, setAsideOpen } = useEstetico();
 
+    console.log('AsideOpen', AsideOpen);
 
-    // Aplicar tema al cargar la página y cambio al dark mode dependiendo de la variable darkMode esto modifica directamente el body del documento por lo que no tengo que pasarlo como provider
-    
+    // Aplicar tema al cargar la página y cambio al dark mode
     useEffect(() => {
         if (darkMode) {
             document.body.setAttribute('data-theme', 'dark');
@@ -38,8 +39,22 @@ export function Navbar() {
         };
     }, []);
 
+    // Detectar el tamaño de la pantalla y mostrar u ocultar opciones extra
+    useEffect(() => {
+        function handleResize() {
+            setShowExtraOptions(window.innerWidth <= 450);
+        }
+    
+        handleResize(); 
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
-        <nav>
+        <nav className='navbar'>
             <span 
                 className="material-symbols-outlined menu-icon"
                 onClick={() => setAsideOpen(!AsideOpen)}
@@ -48,7 +63,7 @@ export function Navbar() {
             </span>
 
             <NavLink to="/">
-                <img src="src/assets/LocalEvents.jpg" alt="logo" />
+                <img className='img-logo' src="src/assets/LocalEvents.jpg" alt="logo" />
             </NavLink>
 
             <div className="search-bar">
@@ -56,38 +71,42 @@ export function Navbar() {
             </div>
 
             <div className="nav-actions">
-                <button className="create-association">Crear +</button>
+                {!showExtraOptions && (
+                    <>
+                        <button className="create-association">Crear +</button>
 
-                <div className="notifications-container" ref={notificationsRef}>
-                    <span 
-                        className="material-symbols-outlined notification-icon"
-                        onClick={() => setNotificationsOpen(!notificationsOpen)}
-                    >
-                        notifications
-                    </span>
+                        <div className="notifications-container" ref={notificationsRef}>
+                            <span 
+                                className="material-symbols-outlined notification-icon"
+                                onClick={() => setNotificationsOpen(!notificationsOpen)}
+                            >
+                                notifications
+                            </span>
 
-                    {notificationsOpen && (
-                        <div className="notifications-menu">
-                            <h4 className='notificaciones-title'>Notificaciones</h4>
-                            <div className="notification-item">
-                                <p><strong>Evento Nuevo:</strong> Conferencia sobre tecnología</p>
-                                <span className='span-time'>Hace 2 horas</span>
-                                <span className="close-notification material-symbols-outlined">cancel</span>
-                            </div>
-                            <div className="notification-item">
-                                <p><strong>Evento Nuevo:</strong> Conferencia sobre tecnología</p>
-                                <span className='span-time'>Hace 2 horas</span>
-                                <span className="close-notification material-symbols-outlined">cancel</span>
-                            </div>
-                            <div className="notification-item">
-                                <p><strong>Evento Nuevo:</strong> Conferencia sobre tecnología</p>
-                                <span className='span-time'>Hace 2 horas</span>
-                                <span className="close-notification material-symbols-outlined">cancel</span>
-                            </div>
+                            {notificationsOpen && (
+                                <div className="notifications-menu">
+                                    <h4 className='notificaciones-title'>Notificaciones</h4>
+                                    <div className="notification-item">
+                                        <p><strong>Evento Nuevo:</strong> Conferencia sobre tecnología</p>
+                                        <span className='span-time'>Hace 2 horas</span>
+                                        <span className="close-notification material-symbols-outlined">cancel</span>
+                                    </div>
+                                    <div className="notification-item">
+                                        <p><strong>Evento Nuevo:</strong> Conferencia sobre tecnología</p>
+                                        <span className='span-time'>Hace 2 horas</span>
+                                        <span className="close-notification material-symbols-outlined">cancel</span>
+                                    </div>
+                                    <div className="notification-item">
+                                        <p><strong>Evento Nuevo:</strong> Conferencia sobre tecnología</p>
+                                        <span className='span-time'>Hace 2 horas</span>
+                                        <span className="close-notification material-symbols-outlined">cancel</span>
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                    )}
-                </div>
-
+                    </>
+                )}
+                
                 <div className="profile-container" ref={menuRef}>
                     <img
                         className="profile"
@@ -99,6 +118,12 @@ export function Navbar() {
                     {menuOpen && (
                         <div className="profile-menu">
                             <NavLink to="/perfil">Ver Perfil</NavLink>
+                            {showExtraOptions && (
+                                <>
+                                    <button className="create-association">Crear +</button>
+                                    <NavLink to="/notificaciones">Notificaciones</NavLink>
+                                </>
+                            )}
                             <NavLink to="/configuracion">Configuración</NavLink>
 
                             <button 
