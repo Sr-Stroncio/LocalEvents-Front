@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Aside from './Aside';
+import DivGlobal from './DivGlobal';
 import {ProviderEstetico} from '../providers/ProviderEstetico';
 
 
@@ -12,7 +13,9 @@ export function Layout() {
             <ProviderEstetico>
                 <Navbar/>
                 <Aside/>
-                <Outlet/>
+                <DivGlobal>
+                    <Outlet/>
+                </DivGlobal>
             </ProviderEstetico>
         </>
     )

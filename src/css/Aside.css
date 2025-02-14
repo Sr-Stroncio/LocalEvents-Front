@@ -1,1 +1,209 @@
+.aside-container {
+    width: 15%;
+    height: calc(100% - 75px);
+    position: fixed;
+    left: 0;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.aside-container.closed {
+    display: none  ;
+}
+
+.aside-container.open {
+    display: block ;
+}
+
+.aside-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.aside-container::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+}
+
+.aside-container::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+
+.aside-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.span-aside{
+    font-size: 22px;
+}
+
+.aside-nav ul {
+    list-style: none;
+    padding: 10px 25px;
+    margin: 0;
+}
+
+.aside-section {
+    font-size: 16px;
+    font-weight: bold;
+    gap: 10px; 
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.aside-section:hover {
+    background-color: #e1ebee;
+    border-radius: 5px;
+}
+
+.aside-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
+.aside-sublist {
+    padding-left: 15px;
+}
+
+.aside-subscription {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.aside-subscription:hover {
+    background-color: #e1ebee;
+}
+
+.aside-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.aside-sublist li {
+    font-size: 14px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.toggle-section span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+/* 
+
+
+
+
+
+
+        DARK MODE
+
+        
+
+
+
+
+
+*/
+
+
+
+[data-theme="dark"] .aside-container {
+    background-color: #181818;
+    border-right: 1px solid #333;
+}
+
+[data-theme="dark"] .aside-container::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+[data-theme="dark"] .aside-section {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .aside-section:hover {
+    background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .aside-divider {
+    background-color: #333;
+}
+
+[data-theme="dark"] .aside-sublist li {
+    color: #aaaaaa;
+}
+
+[data-theme="dark"] .aside-sublist li:hover {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .aside-subscription:hover {
+    background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .aside-image {
+    border: 1px solid #444;
+}
+
+
+/* 
+
+
+
+
+
+
+
+RESPOSIVE 
+
+
+
+
+
+
+
+*/
+
+
+@media screen and (max-width: 1480px) {
+
+    .aside-container {
+        width: 20%; 
+    }
+    
+}
+
+@media screen and (max-width: 1150px) {
+
+    .aside-container {
+        width: 25%; 
+    }
+    
+}
+
+@media screen and (max-width: 950px) {
+
+    .aside-container {
+        height: calc(100% - 70px);
+    }
+
+    .aside-container {
+        width: 250px; 
+    }
+    
+}
 
