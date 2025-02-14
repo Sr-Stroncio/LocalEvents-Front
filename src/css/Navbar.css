@@ -8,15 +8,17 @@ nav {
 }
 
 .menu-icon {
-    font-size: 28px;
-    color: #333;
+    font-size: 24px;
+    color: #000000;
     cursor: pointer;
-    display: none; /* Oculto en pantallas grandes */
+    display: none;
     transition: color 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .menu-icon:hover {
-    color: #414d70;
+    background-color:#ededed;
 }
 
 @media screen and (max-width: 1000px) {
@@ -35,7 +37,7 @@ nav img {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    max-width: 40%;
+    max-width: 30%;
     margin: 0;
     padding: 0;
 }
@@ -46,23 +48,23 @@ nav img {
     border: none;
     border-radius: 20px;
     font-size: 14px;
-    background-color: #2d354e;
-    color: #ffffff;
+    background-color: #e1ebee;
+    color: #000000;
     outline: none;
     transition: background-color 0.3s ease;
     box-sizing: border-box;
 }
 
 .search-bar input::placeholder {
-    color: #b9b9b9;
+    color: #585858;
     opacity: 1;
 }
 
 .search-bar input:hover{
-    background-color: #414d70;
+    background-color: #c4dbe1;
 }
 .search-bar input:focus {
-    background-color: #2d354e;
+    background-color: #e1ebee;
 }
 
 .nav-actions {
@@ -72,19 +74,18 @@ nav img {
 }
 
 .create-association {
-    background-color: #2d354e;
-    color: white;
+    background-color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 8px 15px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s;
     margin-right: 10px;
 }
 
 .create-association:hover {
-    background-color: #3a4977;
+    background-color: #e1ebee;
 }
 
 
@@ -94,10 +95,94 @@ nav img {
     cursor: pointer;
     transition: color 0.3s ease;
     margin-right: 10px;
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .notification-icon:hover {
-    color: #465994;
+    background-color: #e1ebee;
+}
+
+.notifications-container {
+    position: relative;
+}
+
+.notifications-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    padding: 15px;
+    z-index: 1000;
+    color: #000000;
+    max-height: 250px; 
+    overflow-y: auto;  
+}
+
+.notifications-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.notifications-menu::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+}
+
+.notifications-menu::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.notifications-menu .notificaciones-title {
+    margin: 0;
+    padding-bottom: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #050505;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+}
+
+.notification-item {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.notification-item:hover {
+    background-color: #e1ebee;
+    cursor: pointer;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.close-notification {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #aa0000;
+    transition: color 0.3s ease;
+}
+
+.notification-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.notification-item .span-time {
+    display: block;
+    font-size: 12px;
+    opacity: 0.8;
 }
 
 
@@ -107,6 +192,11 @@ nav img {
     border-radius: 50%;
     cursor: pointer;
     object-fit: cover;
+    padding: 5px;
+}
+
+.profile:hover {
+    background-color: #e1ebee;
 }
 
 .profile-container {
@@ -118,9 +208,9 @@ nav img {
     position: absolute;
     right: 0;
     top: 100%;
-    background: #465994;
+    background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     width: 180px;
     display: flex;
     flex-direction: column;
@@ -133,7 +223,7 @@ nav img {
 .profile-menu button {
     padding: 12px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-size: 14px;
     text-align: left;
     display: flex; 
@@ -151,8 +241,120 @@ nav img {
     margin-left: 0px;
 }
 
-/* Hover en opciones del menú */
 .profile-menu a:hover,
 .profile-menu button:hover {
-    background: #3a4977;
+    background: #e1ebee;
+}
+
+
+/* 
+
+
+
+
+
+
+        DARK MODE
+
+        
+
+
+
+
+
+*/
+
+
+
+[data-theme="dark"] nav {
+    background-color: #181818;
+    border-bottom: 1px solid #333;
+}
+
+[data-theme="dark"] .menu-icon {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .menu-icon:hover {
+    background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .search-bar input {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .search-bar input::placeholder {
+    color: #aaaaaa;
+}
+
+[data-theme="dark"] .search-bar input:hover {
+    background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .create-association {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .create-association:hover {
+    background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .notification-icon {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .notification-icon:hover {
+    background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .notifications-menu {
+    background: #222222;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+[data-theme="dark"] .notifications-menu::-webkit-scrollbar-thumb {
+    background-color: #666;
+}
+
+[data-theme="dark"] .notifications-menu .notificaciones-title {
+    border-bottom: 1px solid #444;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .notification-item {
+    border-bottom: 1px solid #444;
+}
+
+[data-theme="dark"] .notification-item:hover {
+    background-color: #333;
+}
+
+[data-theme="dark"] .close-notification {
+    color: #ff5555;
+}
+
+[data-theme="dark"] .profile {
+    background-color: #222;
+}
+
+[data-theme="dark"] .profile:hover {
+    background-color: #333;
+}
+
+[data-theme="dark"] .profile-menu {
+    background: #222222;
+    border: 1px solid #444;
+}
+
+[data-theme="dark"] .profile-menu a,
+[data-theme="dark"] .profile-menu button {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .profile-menu a:hover,
+[data-theme="dark"] .profile-menu button:hover {
+    background: #333;
 }
