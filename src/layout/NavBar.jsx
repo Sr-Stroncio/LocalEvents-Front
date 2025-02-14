@@ -23,7 +23,7 @@ export function Navbar() {
         }
     }, [darkMode]);
 
-    // Manejar clic fuera de los menús para cerrarlos
+    // Manejar clic fuera de los menús para cerrarlos si están abiertos
     useEffect(() => {
         function handleClickOutside(event) {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
