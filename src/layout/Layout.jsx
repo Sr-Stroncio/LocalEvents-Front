@@ -8,6 +8,19 @@ import { useEstetico } from '../providers/ProviderEstetico';
 export function Layout() {
     const { AsideOpen, setAsideOpen } = useEstetico();
 
+    // Manejar el bloqueo de scroll cuando el aside está abierto en pantallas pequeñas
+    useEffect(() => {
+        if (AsideOpen && window.innerWidth <= 1150) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [AsideOpen]);   
+
     // Aca maejamos el cambio de pantalla para abrir o cerrar el aside
     useEffect(() => {
 

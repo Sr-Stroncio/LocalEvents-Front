@@ -13,11 +13,6 @@
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 3px;
-    cursor: pointer;
-}
-
-.evento:hover {
-    background-color: rgba(225, 235, 238, 0.5);
 }
 
 .evento-header {
@@ -25,6 +20,12 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    border-radius: 50px;
+    cursor: pointer
+}
+
+.evento-header:hover {
+    background-color: #e1ebee;;
 }
 
 .asociacion-img {
@@ -48,7 +49,7 @@
 
 .evento-descripcion {
     font-size: 0.95rem;
-    color: #333;
+    color: #131313;
     margin-bottom: 10px;
 }
 
@@ -63,21 +64,25 @@
     border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
-    opacity: 0.7;
-    transition: 0.3s;
+    opacity: 1;
+    background-color: #e2e2e2;
 }
 
-.btn-eventos:hover {
-    opacity: 1;
+.btn-favorite:hover {
+    background-color: #d88c8c;
+}
+
+.btn-forum:hover {
+    background-color: #aaaaaa;
 }
 
 .btn-join {
-    background: #007bff;
+    background: #204e8a;
     color: white;
 }
 
 .btn-join:hover {
-    background: #0056b3;
+    background: #2462b3;
 }
 
 .evento-divider {
@@ -88,5 +93,66 @@
     margin-bottom: 25px;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+/* 
+
+
+
+
+
+
+        DARK MODE
+
+        
+
+
+
+
+
+*/
+
+
+[data-theme="dark"] .evento {
+    background: #181818;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .evento:hover {
+    background-color: rgba(42, 42, 42, 0.4);
+}
+
+[data-theme="dark"] .evento-header {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .asociacion-nombre {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .evento-descripcion {
+    color: #aaaaaa;
+}
+
+[data-theme="dark"] .btn-eventos {
+    background: #2a2a2a;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .btn-eventos:hover {
+    background: #3a3a3a;
+}
+
+[data-theme="dark"] .btn-join {
+    background: #0056b3;
+    color: white;
+}
+
+[data-theme="dark"] .btn-join:hover {
+    background: #003f80;
+}
+
+[data-theme="dark"] .evento-divider {
+    background-color: #333;
 }
 
