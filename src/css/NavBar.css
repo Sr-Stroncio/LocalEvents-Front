@@ -1,11 +1,19 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 10px); 
     background-color: #ffffff;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
+
+
 
 .menu-icon {
     font-size: 24px;
@@ -19,12 +27,6 @@
 
 .menu-icon:hover {
     background-color:#ededed;
-}
-
-@media screen and (max-width: 1150px) {
-    .menu-icon {
-        display: block; 
-    }
 }
 
 nav img {
@@ -381,6 +383,11 @@ nav img {
 
 */
 
+@media screen and (max-width: 1150px) {
+    .menu-icon {
+        display: block; 
+    }
+}
 
 @media screen and (max-width: 950px) {
 

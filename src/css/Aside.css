@@ -1,6 +1,7 @@
 .aside-container {
     width: 15%;
-    height: calc(100% - 75px);
+    height: 100%;
+    padding-top: 75px;
     position: fixed;
     left: 0;
     background-color: #ffffff;
@@ -21,7 +22,7 @@
 }
 
 .aside-container::-webkit-scrollbar-thumb {
-    background-color: #bbb;
+    background-color: #e1ebee;
 }
 
 .aside-container::-webkit-scrollbar-track {
@@ -126,6 +127,11 @@
     background-color: #181818;
     border-right: 1px solid #333;
 }
+
+[data-theme="dark"] .aside-container::-webkit-scrollbar-thumb {
+    background-color: #2c2c2c;
+}
+
 
 [data-theme="dark"] .aside-container::-webkit-scrollbar-track {
     background-color: #000000;
