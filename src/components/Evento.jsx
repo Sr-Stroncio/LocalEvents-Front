@@ -16,11 +16,11 @@ export function Evento({ nombre, bio, imagen }) {
 
                 <div className="evento-footer">
 
-                    <button className="btn-eventos">
+                    <button className="btn-eventos btn-forum">
                         <span className="material-symbols-outlined">forum</span>
                     </button>
 
-                    <button className="btn-eventos">
+                    <button className="btn-eventos btn-favorite">
                         <span className="material-symbols-outlined">favorite</span>
                     </button>
 
