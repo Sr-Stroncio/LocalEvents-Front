@@ -1,18 +1,16 @@
 import { Route, Routes } from 'react-router'
-import { useState } from 'react'
 import Layout from './layout/Layout'
 import Eventos from './pages/Eventos'
 import Asociaciones from './pages/Asociaciones'
 import Perfil from './pages/Perfil'
 import Gestion from './pages/Gestion'
+import Notificaciones from './pages/Notificaciones'
 import CreacionAsociacion from './pages/CreacionAsociacion'
+import { ProviderEstetico } from './providers/ProviderEstetico'
 
 function App() {
-
-
-
   return (
-    <>
+    <ProviderEstetico>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Eventos />} />
@@ -20,10 +18,11 @@ function App() {
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/gestion" element={<Gestion />} />
           <Route path="/creacionAsociaciones" element={<CreacionAsociacion />} />
+          <Route path="/notificaciones" element={<Notificaciones />} />
         </Route>
       </Routes>
-    </>
+    </ProviderEstetico>
   )
 }
-// prueb
+
 export default App
