@@ -126,7 +126,7 @@ export function Navbar() {
                                     <NavLink to="/notificaciones">Notificaciones</NavLink>
                                 </>
                             )}
-                            <NavLink to="/configuracion">Configuración</NavLink>
+                            <NavLink to="/">Configuración</NavLink>
 
                             <button 
                                 className="dark-mode-toggle"
