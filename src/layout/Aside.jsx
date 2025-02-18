@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useEstetico } from "../providers/ProviderEstetico";
+import { NavLink } from 'react-router-dom';
 import "../css/Aside.css";
 
 export function Aside() {
@@ -31,16 +32,28 @@ export function Aside() {
             <nav className="aside-nav">
                 <ul>
                     <li className="aside-section">
-                        <span className="material-symbols-outlined span-aside">mountain_flag</span>
-                        Eventos
+                        <NavLink to="/">
+                            <span className="material-symbols-outlined span-aside">
+                                mountain_flag
+                            </span>
+                            Eventos
+                        </NavLink>
                     </li>
                     <li className="aside-section">
-                        <span className="material-symbols-outlined span-aside">diversity_3</span>
-                        Asociaciones
+                        <NavLink to="/">
+                            <span className="material-symbols-outlined span-aside">
+                                diversity_3
+                            </span>
+                            Asociaciones
+                        </NavLink>
                     </li>
                     <li className="aside-section">
-                        <span className="material-symbols-outlined span-aside">demography</span>
-                        Post
+                        <NavLink to="/">
+                            <span className="material-symbols-outlined span-aside">
+                                demography
+                            </span>
+                            Post
+                        </NavLink>
                     </li>
 
                     <hr className="aside-divider" />
