@@ -1,0 +1,188 @@
+
+.ventana-derecha {
+    position: fixed;
+    top: 110px; 
+    right: 10%;
+    width: 400px;
+    max-height: 65vh; 
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 8px;
+    padding-right: 10px;
+}
+
+.ventana-derecha h3 {
+    margin-left: 5px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background: #e1ebee;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.post-asociacion-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-nombre {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.post-contenido {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.post-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.ventana-derecha::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ventana-derecha::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.ventana-derecha:hover::-webkit-scrollbar-thumb {
+    background-color: #e1ebee;; 
+}
+
+
+/* 
+
+
+
+
+
+
+        DARK MODE
+
+        
+
+
+
+
+
+*/
+
+
+[data-theme="dark"] .ventana-derecha {
+    background: #181818;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .post {
+    background: #242424;
+}
+
+[data-theme="dark"] .post-contenido {
+    color: #cccccc;
+}
+
+[data-theme="dark"] .post-nombre {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .ventana-derecha::-webkit-scrollbar-thumb {
+    background-color: #181818;
+}
+
+[data-theme="dark"] .ventana-derecha:hover::-webkit-scrollbar-thumb {
+    background-color: #444; 
+}
+
+
+/* 
+
+
+
+
+
+
+
+
+RESPOSIVE 
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+/* 
+@media screen and (max-width: 1800px) {
+
+    .ventana-derecha {
+        right: 150px;
+        width: 400px;
+        max-height: 65vh; 
+        padding: 10px;
+    }
+    
+} */
+
+@media screen and (max-width: 1600px) {
+
+    .ventana-derecha {
+        right: 5%;
+        width: 400px;
+        max-height: 65vh; 
+    }
+    
+}
+
+@media screen and (max-width: 1400px) {
+
+    .ventana-derecha {
+        right: 15%;
+        width: 300px;
+    }
+    
+}
+
+@media screen and (max-width: 950px) {
+
+    .ventana-derecha {
+        display: none;
+    }
+    
+}
+
+
+
+
+
+
+
