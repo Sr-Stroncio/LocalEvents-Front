@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../css/NavBar.css';
 import { useEstetico } from '../providers/ProviderEstetico';
+import gato from "../assets/gato.jpg";
+import { users } from "../data/User";
+import logo from "../assets/LocalEvents.jpg";
 
 export function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -65,7 +68,7 @@ export function Navbar() {
             </span>
 
             <NavLink to="/">
-                <img className='img-logo' src="src/assets/LocalEvents.jpg" alt="logo" />
+                <img className='img-logo' src={logo} alt="logo" />
             </NavLink>
 
             <div className="search-bar">
@@ -112,7 +115,7 @@ export function Navbar() {
                 <div className="profile-container" ref={menuRef}>
                     <img
                         className="profile"
-                        src="src/assets/gato.jpg"
+                        src={gato}
                         alt="Perfil"
                         onClick={() => setMenuOpen(!menuOpen)}
                     />
@@ -137,8 +140,10 @@ export function Navbar() {
                                     {darkMode ? "toggle_on" : "toggle_off"}
                                 </span>
                             </button>
-
-                            <button className="logout">Cerrar Sesión</button>
+                            
+                            <NavLink to="/">
+                                Cerrar Sesión
+                            </NavLink>
                         </div>
                     )}
                 </div>

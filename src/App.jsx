@@ -7,6 +7,7 @@ import Gestion from './pages/Gestion'
 import Notificaciones from './pages/Notificaciones'
 import CreacionAsociacion from './pages/CreacionAsociacion'
 import { ProviderEstetico } from './providers/ProviderEstetico'
+import EventoInfo from './components/EventoInfo'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/gestion" element={<Gestion />} />
           <Route path="/creacionAsociaciones" element={<CreacionAsociacion />} />
           <Route path="/notificaciones" element={<Notificaciones />} />
+          <Route path="/EventoInfo/:id" element={<EventoInfo />} />
         </Route>
       </Routes>
     </ProviderEstetico>
