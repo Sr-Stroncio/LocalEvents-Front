@@ -1,0 +1,263 @@
+/* Contenedor principal de asociaciones */
+._asociaciones_main_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+._asociaciones_list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    max-width: 700px;
+    margin-right: 500px;
+}
+
+/* Tarjeta de asociación */
+._asociacion_card {
+    width: 90%;
+    max-width: 650px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/* Header de la asociación */
+._asociacion_header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+._asociacion_header:hover {
+    background-color: #f0f0f0;
+}
+
+/* Imagen de la asociación */
+._asociacion_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+._asociacion_img_banner {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Nombre de la asociación */
+._asociacion_name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Información de la asociación */
+._asociacion_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+._asociacion_description {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Nivel de la asociación */
+._asociacion_level {
+    font-weight: bold;
+    background: #204e8a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Footer de la asociación */
+._asociacion_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Botones */
+._btn_asociacion {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #e2e2e2;
+    transition: background-color 0.2s;
+}
+
+._btn_asociacion:hover {
+    background-color: #bbbbbb;
+}
+
+._btn_contact {
+    background: #204e8a;
+    color: white;
+}
+
+._btn_contact:hover {
+    background: #2462b3;
+}
+
+/* Línea divisoria */
+._asociacion_divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+
+/* 
+
+
+
+
+
+
+
+
+Dark Mode 
+
+
+
+
+
+
+
+*/
+
+[data-theme="dark"] ._asociacion_card {
+    background: #181818;
+    color: #ffffff;
+}
+
+[data-theme="dark"] ._asociacion_header {
+    color: #ffffff;
+}
+
+[data-theme="dark"] ._asociacion_header:hover {
+    background-color: rgba(42, 42, 42, 0.4);
+}
+
+[data-theme="dark"] ._asociacion_name {
+    color: #ffffff;
+}
+
+[data-theme="dark"] ._asociacion_level {
+    background: #003f80;
+}
+
+[data-theme="dark"] ._asociacion_description {
+    color: #cccccc;
+}
+
+[data-theme="dark"] ._btn_asociacion {
+    background: #2a2a2a;
+    color: #ffffff;
+}
+
+[data-theme="dark"] ._btn_asociacion:hover {
+    background: #3a3a3a;
+}
+
+[data-theme="dark"] ._btn_contact {
+    background: #003f80;
+}
+
+[data-theme="dark"] ._btn_contact:hover {
+    background: #0056b3;
+}
+
+[data-theme="dark"] ._asociacion_divider {
+    background-color: #333;
+}
+
+/* 
+
+
+
+
+
+
+
+
+Responsive
+
+
+
+
+
+
+
+*/
+
+@media screen and (max-width: 950px) {
+
+
+
+}
+
+
+@media screen and (max-width: 950px) {
+    ._asociaciones_list {
+        max-width: 100%;
+        margin-right: 0;
+        width: 400px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ._asociacion_card {
+        width: 100%;
+        max-width: 350px;
+        padding: 12px;
+        font-size: 0.9rem;  
+    }
+
+    ._asociacion_img {
+        width: 40px;
+        height: 40px;
+    }
+
+    ._asociacion_name {
+        font-size: 1rem;
+    }
+
+    ._asociacion_description {
+        font-size: 0.85rem;
+    }
+
+    ._btn_asociacion {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    ._asociacion_divider {
+        width: 100%;
+    }
+}

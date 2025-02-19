@@ -16,6 +16,7 @@ export const events = [
         end_date: "2025-03-15",
         num_collaborators: 10,  
         max_collaborators: 20,
+        association_id: 1
     },
     {
         id: 2,
@@ -32,6 +33,7 @@ export const events = [
         end_date: "2025-02-20",
         num_collaborators: 5,
         max_collaborators: 10,
+        association_id: 2
     },
     {
         id: 3,
@@ -48,5 +50,6 @@ export const events = [
         end_date: "2025-01-12",
         num_collaborators: 20,
         max_collaborators: 30,
+        association_id: 3
     }
 ];
