@@ -1,7 +1,7 @@
 import "../css/Eventos.css";
 import { Evento } from "../components/Evento";
 import VentanaDerecha from "../components/VentanaDerecha";
-import { events } from "../data/events"; // Importamos los eventos desde la carpeta data
+import { events } from "../data/Events"; 
 
 export function Eventos() {
     return (
