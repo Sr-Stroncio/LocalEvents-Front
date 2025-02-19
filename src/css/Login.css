@@ -1,0 +1,108 @@
+
+.extra-options a {
+    all: unset; 
+    padding: 10px;
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.login-box {
+    width: 350px;
+    background: var(--box-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.login-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.login-form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+.login-button {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: var(--btn-hover);
+}
+
+.extra-options {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+
+.dark-mode-toggle {
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: var(--btn-bg);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/* Variables para el Modo Claro */
+:root {
+    --bg-color: #f4f4f4;
+    --box-bg: white;
+    --input-bg: white;
+    --input-border: #ccc;
+    --text-color: black;
+    --btn-bg: #007bff;
+    --btn-text: white;
+    --btn-hover: #0056b3;
+}
+
+/* Variables para el Modo Oscuro */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --box-bg: #2a2a2a;
+    --input-bg: #3a3a3a;
+    --input-border: #555;
+    --text-color: white;
+    --btn-bg: #ff9800;
+    --btn-text: white;
+    --btn-hover: #e68900;
+}
+
+/* 📌 Responsive */
+@media screen and (max-width: 400px) {
+    .login-box {
+        width: 90%;
+    }
+}
