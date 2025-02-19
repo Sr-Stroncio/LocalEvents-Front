@@ -1,14 +1,18 @@
 import "../css/Eventos.css";
+import { NavLink } from 'react-router-dom';
 
-export function Evento({ nombre, bio, imagen, estado, tipo }) {
+export function Evento({ nombre, bio, imagen, estado, tipo, id }) {
+
+    console.log("Evento: ", id);
     return (
         <>
             <div className="evento">
-                <div className="evento-header">
-                    <img src={imagen} alt="Asociación" className="asociacion-img" />
-                    <span className="asociacion-nombre">{nombre}</span>
-                </div>
-
+                <NavLink to={`/EventoInfo/${id}`}>
+                    <div className="evento-header">
+                        <img src={imagen} alt="Asociación" className="asociacion-img" />
+                        <span className="asociacion-nombre">{nombre}</span>
+                    </div>
+                </NavLink>
                 <img src={imagen} alt="Evento" className="evento-img" />
 
                 <div className="evento-info">
@@ -19,13 +23,23 @@ export function Evento({ nombre, bio, imagen, estado, tipo }) {
                 <p className="evento-descripcion">{bio}</p>
 
                 <div className="evento-footer">
-                    <button className="btn-eventos btn-forum">
-                        <span className="material-symbols-outlined">forum</span>
-                    </button>
+                    <NavLink to="/EventoInfo">
+                            <button className="btn-eventos btn-forum">                        
+                                <span className="material-symbols-outlined">forum</span>
+                            </button>
+                    </NavLink>
 
-                    <button className="btn-eventos btn-forum">Info</button>
+                    <NavLink className={"lo"} to={`/EventoInfo/${id}`}>
+                        <button className="btn-eventos btn-forum">
+                            Info
+                        </button>
+                    </NavLink>
 
-                    <button className="btn-eventos btn-join">Unirse</button>
+                    <NavLink to="/EventoInfo">  
+                        <button className="btn-eventos btn-join">
+                                Unirse
+                        </button>
+                    </NavLink>
                 </div>
             </div>
 

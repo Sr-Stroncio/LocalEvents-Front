@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useEstetico } from "../providers/ProviderEstetico";
 import { NavLink } from 'react-router-dom';
 import "../css/Aside.css";
+import gato from "../assets/gato.jpg";
 
 export function Aside() {
     const { AsideOpen, setAsideOpen } = useEstetico();
@@ -9,9 +10,9 @@ export function Aside() {
     const [showResources, setShowResources] = useState(false);
 
     const fakeSubscriptions = [
-        { nombre: "Asociación 1", imagen: "src/assets/gato.jpg" },
-        { nombre: "Asociación 2", imagen: "src/assets/gato.jpg" },
-        { nombre: "Asociación 3", imagen: "src/assets/gato.jpg" }
+        { nombre: "Asociación 1", imagen: gato },
+        { nombre: "Asociación 2", imagen: gato },
+        { nombre: "Asociación 3", imagen: gato }
     ];
 
     useEffect(() => {
