@@ -32,30 +32,36 @@ export function Aside() {
         <aside className={`aside-container ${AsideOpen ? "open" : "closed"}`}>
             <nav className="aside-nav">
                 <ul>
-                    <li className="aside-section">
-                        <NavLink to="/">
-                            <span className="material-symbols-outlined span-aside">
-                                mountain_flag
-                            </span>
-                            Eventos
-                        </NavLink>
-                    </li>
-                    <li className="aside-section">
-                        <NavLink to="/">
-                            <span className="material-symbols-outlined span-aside">
-                                diversity_3
-                            </span>
-                            Asociaciones
-                        </NavLink>
-                    </li>
-                    <li className="aside-section">
-                        <NavLink to="/">
-                            <span className="material-symbols-outlined span-aside">
-                                demography
-                            </span>
-                            Post
-                        </NavLink>
-                    </li>
+                    
+                    <NavLink to="/">
+                        <li className="aside-section">
+                            
+                                <span className="material-symbols-outlined span-aside">
+                                    mountain_flag
+                                </span>
+                                Eventos
+                        </li>
+                    </NavLink>
+
+                    <NavLink to="/asociaciones">
+                        <li className="aside-section">
+                            
+                                <span className="material-symbols-outlined span-aside">
+                                    diversity_3
+                                </span>
+                                Asociaciones
+                        </li>
+                    </NavLink>
+
+                    <NavLink to="/">
+                        <li className="aside-section">
+                            
+                                <span className="material-symbols-outlined span-aside">
+                                    demography
+                                </span>
+                                Post
+                        </li>
+                    </NavLink>
 
                     <hr className="aside-divider" />
 
