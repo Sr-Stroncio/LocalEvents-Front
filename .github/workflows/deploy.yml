@@ -1,6 +1,9 @@
-name: CI
+name: Deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - development
 
 jobs:
   build:
@@ -8,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up SSH
       uses: webfactory/ssh-agent@v0.5.3
@@ -20,7 +23,18 @@ jobs:
         mkdir -p ~/.ssh
         ssh-keyscan rafael.informaticamajada.es >> ~/.ssh/known_hosts
 
-    - name: Deploy
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to server
       run: |
         ssh illian@rafael.informaticamajada.es << 'EOF'
           cd /var/www/html/LocalEvents-Front
