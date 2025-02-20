@@ -1,31 +1,30 @@
-name: Deploy to VPS
+name: CI
 
-on:
-  push:
-    branches:
-      - development
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Start SSH Agent
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Add SSH Key to Known Hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan rafael.informaticamajada.es >> ~/.ssh/known_hosts
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy
-        run: |
-          ssh illian@rafael.informaticamajada.es << 'EOF'
-            cd /var/www/html/LocalEvents-Front
-            git pull origin development
-            npm install
-            npm run build
-          EOF
+    - name: Add SSH Key to Known Hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan rafael.informaticamajada.es >> ~/.ssh/known_hosts
+
+    - name: Deploy
+      run: |
+        ssh illian@rafael.informaticamajada.es << 'EOF'
+          cd /var/www/html/LocalEvents-Front
+          git pull origin development
+          npm install
+          npm run build
+        EOF
