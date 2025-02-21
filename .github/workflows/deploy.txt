@@ -1,0 +1,31 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - development
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy
+        run: |
+          ssh -p 2222 illian@161.22.40.230 << 'EOF'
+            cd /var/www/html/LocalEvents-Front
+            git stash
+            git pull origin development
+            npm install
+            npm run build
+          EOF
