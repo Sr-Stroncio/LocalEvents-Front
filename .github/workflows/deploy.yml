@@ -16,12 +16,11 @@ jobs:
         with:
           host: rafael.informaticamajada.es
           port: 2222
-          username: razuk
+          username: illian
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: "
             cd /var/www/html/LocalEvents-Front
-            git stash
-            git pull origin development
+            git pull
             npm install
             npm run build
           "
