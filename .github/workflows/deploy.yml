@@ -19,8 +19,8 @@ jobs:
           username: illian
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: "
-            cd /var/www/html/LocalEvents-Front
-            git pull
-            npm install
-            npm run build
+            cd /var/www/html/LocalEvents-Front;
+            git pull;
+            npm install;
+            npm run build;
           "
