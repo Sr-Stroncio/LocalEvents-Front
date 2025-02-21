@@ -1,5 +1,3 @@
-// Prueba deploy
-
 export default function llamadaApi() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
