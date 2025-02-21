@@ -14,7 +14,7 @@ export default function LlamadaApi({ table }) {
                 setLoading(false);
             } else {
                 try {
-                    const response = await axios.get(`http://localhost:8000/api/${table}`);
+                    const response = await axios.get(`https://yeray.informaticamajada.es/api/${table}`);
                     localStorage.setItem('associationsData', JSON.stringify(response.data));
                     setData(response.data);
                     setLoading(false);
