@@ -18,6 +18,7 @@ jobs:
           port: 2222
           username: razuk
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key_passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           script: "
             cd /var/www/html/LocalEvents-Front
             git stash
