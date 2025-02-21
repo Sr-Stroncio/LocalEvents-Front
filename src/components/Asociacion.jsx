@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
+import LlamadaApi from "./LlamadaApi";
 
-export function Asociacion({ id, name, description, image, email, phone_number, level }) {
+export default function Asociacion({ id, name, description, image, email, phone_number, level }) {
     return (
         <>
+            <LlamadaApi table="associations" />
             <div className="_asociacion_card">
                 <NavLink to={`/AsociacionInfo/${id}`} className="_asociacion_header">
                     <img src={image} alt={name} className="_asociacion_img" />
@@ -31,5 +33,3 @@ export function Asociacion({ id, name, description, image, email, phone_number, 
         </>
     );
 }
-
-export default Asociacion;

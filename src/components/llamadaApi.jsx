@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-const LlamadaApi = () => {
+export default function LlamadaApi({ table }) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://yeray.informaticamajada.es/api/users')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+        const fetchData = async () => {
+            const cachedData = localStorage.getItem('associationsData');
+            if (cachedData) {
+                setData(JSON.parse(cachedData));
+                setLoading(false);
+            } else {
+                try {
+                    const response = await axios.get(`http://localhost:8000/api/${table}`);
+                    localStorage.setItem('associationsData', JSON.stringify(response.data));
+                    setData(response.data);
+                    setLoading(false);
+                } catch (error) {
+                    setError(error);
+                    setLoading(false);
                 }
-                return response.json();
-            })
-            .then((data) => {
-                setData(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                setError(error);
-                setLoading(false);
-            });
-    }, []);
+            }
+        };
+
+        fetchData();
+    }, [table]);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -32,8 +37,6 @@ const LlamadaApi = () => {
     }
 
     return (
-        console.log(data.data)
+        console.log(localStorage.getItem('associationsData'))
     );
 };
-
-export default LlamadaApi;
