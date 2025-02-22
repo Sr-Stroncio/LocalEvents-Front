@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import LlamadaApi from "./LlamadaApi";
+import LlamadaApi from "../providers/LlamadaApi";
 
-export default function Asociacion({ id, name, description, image, email, phone_number, level }) {
+export function Asociacion({ id, name, description, image, email, phone_number, level }) {
     return (
         <>
             <LlamadaApi table="associations" />
@@ -33,3 +33,5 @@ export default function Asociacion({ id, name, description, image, email, phone_
         </>
     );
 }
+
+export default Asociacion;
