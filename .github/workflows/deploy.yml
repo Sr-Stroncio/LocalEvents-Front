@@ -1,0 +1,26 @@
+name: Despliegue del front-end
+
+on:
+  push:
+    branches:
+      - development
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Despliegue en el vps
+    runs-on: ubuntu-latest
+    steps:
+      - name: Despliegue
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: rafael.informaticamajada.es
+          port: 2222
+          username: illian
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: "
+            cd /var/www/html/LocalEvents-Front;
+            git pull;
+            npm install;
+            npm run build;
+          "
