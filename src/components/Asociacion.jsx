@@ -1,10 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, UNSAFE_decodeViaTurboStream } from "react-router-dom";
 import LlamadaApi from "../providers/LlamadaApi";
 
 export function Asociacion({ id, name, description, image, email, phone_number, level }) {
+
+    LlamadaApi('associations');
+
+    console.log(localStorage.getItem('associationsData'));
+
     return (
         <>
-            <LlamadaApi table="associations" />
             <div className="_asociacion_card">
                 <NavLink to={`/AsociacionInfo/${id}`} className="_asociacion_header">
                     <img src={image} alt={name} className="_asociacion_img" />
