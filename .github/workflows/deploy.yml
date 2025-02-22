@@ -3,7 +3,7 @@ name: Despliegue del front-end
 on:
   push:
     branches:
-      - development
+      - Illian
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
           host: rafael.informaticamajada.es
           port: 2222
           username: razuk
-          key: ${{ secrets.CLAVE_PRIVADA }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: "
             cd /var/www/html/LocalEvents-Front;
             git pull origin development;
