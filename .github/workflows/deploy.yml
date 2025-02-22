@@ -17,7 +17,7 @@ jobs:
           host: rafael.informaticamajada.es
           port: 2222
           username: razuk
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.CLAVE_PRIVADA }}
           script: "
             cd /var/www/html/LocalEvents-Front;
             git pull origin development;
