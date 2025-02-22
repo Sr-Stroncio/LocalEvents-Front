@@ -3,7 +3,7 @@ name: Despliegue del front-end
 on:
   push:
     branches:
-      - Illian
+      - development
   workflow_dispatch:
 
 jobs:
